@@ -30,3 +30,57 @@ Docker Engine is the core part of the Docker platform that creates, runs, and ma
 1. Development Environment: Docker makes it easy for developers to set up consistent development environments across teams. Developers can run containers locally that mirror the production environment.
 2. Microservices: Docker is commonly used in microservices architecture, where applications are divided into smaller, independent services. Each service runs in its container, ensuring isolation and scalability.
 3. Continuous Integration/Continuous Deployment (CI/CD): Docker containers are frequently used in CI/CD pipelines to ensure that applications are built and tested in consistent environments.
+
+# STEPS TO INSTALL DOCKER 
+To install Docker using PuTTY, you'll typically be connecting to a remote server running Linux (most commonly Ubuntu). PuTTY is used to establish an SSH connection to the server. Once you're logged in, the installation of Docker can be done using terminal commands.
+
+Step 1: Connect to the Server via PuTTY
+* Open PuTTY
+* Enter the Hostname or IP Address
+* Click Open
+* Login to the server 
+
+Step 2: Update Package Index
+Once logged into the server, run the following commands to update the package index:
+
+                    sudo apt-get update
+
+Step 3: Install Prerequisites
+To ensure Docker can be installed, you'll need to install a few prerequisite packages:
+
+           sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+
+Step 4: Add Docker’s Official GPG Key
+Download Docker’s GPG key to verify the Docker packages are legitimate:
+
+       curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+Step 5: Add the Docker APT Repository
+Add Docker’s official repository to your system’s list of APT sources:
+
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+Step 6: Install Docker
+
+   sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+Step 7: Verify Docker Installation
+To verify that Docker is installed correctly, run the following command:
+
+      docker --version
+
+This will display the installed version of Docker. To further verify, you can run a simple test container:
+
+      sudo docker run hello-world
+
+If Docker is installed correctly, this command will download and run a test container, outputting a "Hello from Docker" message.
+
+
+
+
+
+
+
+
+
+
