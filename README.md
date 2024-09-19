@@ -75,12 +75,52 @@ This will display the installed version of Docker. To further verify, you can ru
 
 If Docker is installed correctly, this command will download and run a test container, outputting a "Hello from Docker" message.
 
+# NGINX 
+Nginx (pronounced "engine-x") is a high-performance, open-source web server and reverse proxy server designed to handle high-traffic websites and applications. In addition to its web server and reverse proxy capabilities, Nginx can also function as a load balancer, HTTP cache, and even a mail proxy. It is known for its ability to handle large numbers of simultaneous connections efficiently, making it popular for high-traffic sites.
 
+# Key Features and Functions of Nginx:
+1. Web Server:
+   Nginx can serve static files (HTML, CSS, JS, images, etc.) directly to clients, making it a fast and efficient web server for handling static content.
 
+2. Reverse Proxy:
+   It acts as an intermediary between clients and backend servers, improving load distribution, security, and performance.
 
+3. Load Balancer:
+   Nginx can distribute incoming client requests across multiple backend servers, balancing the load to ensure high availability and reliability.
 
+4. HTTP Cache:
+   Nginx can cache responses from upstream servers and serve cached content directly to clients, reducing load on backend servers and improving response times.
+   
+5. Gzip Compression:
+   Nginx can compress HTTP responses before sending them to clients using Gzip or Brotli compression, reducing bandwidth usage and improving load times for users.
 
+# Common Use Cases of Nginx:
+**1. Serving Static Content:** Nginx is excellent at serving static files such as HTML, CSS, JS, and images directly from the file system. It does so with minimal overhead, making it ideal for high-performance websites.
 
+**2. Reverse Proxy for Applications:** Nginx is often used as a reverse proxy in front of application servers (like Node.js, Flask, Django, or PHP). By doing so, it forwards requests to the backend application servers and passes the responses back to the clients.
 
+**3. Load Balancing Across Multiple Servers:** Nginx is commonly used to balance traffic across multiple backend servers, ensuring even distribution and improved reliability.
 
+**4. HTTPS and SSL Termination:** Nginx can handle HTTPS traffic by terminating SSL connections, which reduces the load on backend servers by handling the cryptographic overhead.
 
+# STEPS TO INSTALL NGINIX
+STEP 1: Connect to your server and run the following command to update your system package 
+
+          sudo apt update
+
+STEP 2: Install NGINIX 
+
+      sudo apt-get install nginx 
+
+STEP 3: Start and Enable Nginx
+    
+    sudo systemctl start nginx
+    sudo systemctl enable nginx
+
+STEP 4: Allow Nginx in Firewall (if applicable)
+
+     sudo ufw allow 'Nginx HTTP'
+
+STEP 5:Verify Installation
+
+     sudo systemctl status nginx
