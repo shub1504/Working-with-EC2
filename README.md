@@ -62,7 +62,7 @@ Add Docker’s official repository to your system’s list of APT sources:
 
 Step 6: Install Docker
 
-   sudo apt-get install docker-ce docker-ce-cli containerd.io
+          sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 Step 7: Verify Docker Installation
 To verify that Docker is installed correctly, run the following command:
